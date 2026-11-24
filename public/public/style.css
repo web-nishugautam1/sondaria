@@ -1,0 +1,854 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --blue: #174ee8;
+  --pink: #ff4f9a;
+  --yellow: #ffe500;
+  --cream: #fff8ec;
+  --ink: #17172b;
+  --white: #ffffff;
+  --muted: #77778a;
+  --line: #eee8dc;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  background: var(--cream);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* HEADER */
+
+.header {
+  height: 78px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255,255,255,.96);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(15px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+  text-decoration: none;
+  font: 800 23px 'Baloo 2';
+}
+
+.logo-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  background: var(--yellow);
+  border-radius: 13px;
+  font-size: 28px;
+  transform: rotate(-8deg);
+}
+
+.logo small {
+  display: block;
+  font: 800 8px 'DM Sans';
+  letter-spacing: 2px;
+}
+
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.header nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 800;
+  transition: .2s;
+}
+
+.header nav a:hover {
+  color: var(--pink);
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 25px;
+}
+
+.cart-button {
+  border: none;
+  border-radius: 30px;
+  background: var(--ink);
+  color: white;
+  padding: 12px 18px;
+  font-weight: 800;
+}
+
+.cart-button span {
+  color: var(--yellow);
+  margin-left: 8px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 630px;
+  background: var(--yellow);
+  padding: 75px 8%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 35px;
+  overflow: hidden;
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+}
+
+.hero h1 {
+  font: 800 clamp(55px,7vw,92px)/.96 'Baloo 2';
+  letter-spacing: -3px;
+  margin: 20px 0;
+}
+
+.hero h1 em,
+.section-heading h2 em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+.hero-content p {
+  max-width: 440px;
+  font-size: 15px;
+  line-height: 1.9;
+  color: #454354;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 22px;
+  border: none;
+  border-radius: 40px;
+  font-size: 12px;
+  font-weight: 900;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px #17172b25;
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: white;
+}
+
+.btn-white {
+  background: white;
+  color: var(--ink);
+}
+
+.hero-caption {
+  margin-top: 30px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.hero-visual {
+  height: 450px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.hero-shape {
+  position: absolute;
+  width: 390px;
+  height: 390px;
+  border-radius: 48% 52% 60% 40%;
+  background: var(--pink);
+  animation: shapeMove 8s infinite ease-in-out;
+}
+
+.hero-image {
+  position: relative;
+  width: 310px;
+  height: 400px;
+  object-fit: cover;
+  border: 9px solid white;
+  border-radius: 180px 180px 28px 28px;
+  box-shadow: 18px 20px 0 var(--blue);
+  transform: rotate(4deg);
+  animation: imageFloat 5s ease-in-out infinite;
+}
+
+.floating-label {
+  position: absolute;
+  background: white;
+  padding: 14px 18px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 900;
+  box-shadow: 0 10px 25px #17172b20;
+  z-index: 2;
+}
+
+.label-one {
+  top: 35px;
+  left: 0;
+  transform: rotate(-8deg);
+}
+
+.label-two {
+  bottom: 30px;
+  right: 0;
+  transform: rotate(7deg);
+}
+
+.star {
+  position: absolute;
+  font-size: 40px;
+  color: white;
+  animation: starSpin 8s linear infinite;
+}
+
+.star-one {
+  top: 0;
+  right: 8%;
+  color: var(--blue);
+}
+
+.star-two {
+  bottom: 15px;
+  left: 4%;
+}
+
+/* ANIMATIONS */
+
+@keyframes imageFloat {
+  0%, 100% { transform: translateY(0) rotate(4deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+@keyframes shapeMove {
+  50% {
+    border-radius: 60% 40% 45% 55%;
+    transform: rotate(12deg);
+  }
+}
+
+@keyframes starSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* TICKER */
+
+.ticker {
+  background: var(--blue);
+  color: white;
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 3px;
+  word-spacing: 15px;
+}
+
+/* SECTIONS */
+
+.section {
+  padding: 85px 8%;
+}
+
+.section-heading {
+  margin-bottom: 35px;
+}
+
+.section-heading h2 {
+  font: 800 clamp(38px,5vw,58px)/1.05 'Baloo 2';
+  margin: 15px 0;
+  letter-spacing: -1.5px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* SERVICE CARDS */
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+}
+
+.service-card {
+  min-height: 280px;
+  padding: 30px;
+  border-radius: 23px;
+  transition: .35s;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card:hover {
+  transform: translateY(-9px) rotate(-1deg);
+}
+
+.service-card.pink {
+  background: #ffd2e4;
+}
+
+.service-card.yellow {
+  background: #ffed78;
+}
+
+.service-card.blue {
+  background: #cbd8ff;
+}
+
+.service-icon {
+  font-size: 42px;
+  margin-bottom: 25px;
+}
+
+.service-card small {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 2px;
+}
+
+.service-card h3 {
+  font: 800 34px/1.1 'Baloo 2';
+  margin: 14px 0 28px;
+}
+
+.service-card button {
+  border: none;
+  border-bottom: 2px solid var(--ink);
+  padding: 7px 0;
+  background: none;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+/* STORE */
+
+.store-section {
+  background: #fffdf8;
+}
+
+.store-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.store-tools input {
+  width: min(100%,320px);
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  outline: none;
+}
+
+.store-tools input:focus {
+  border-color: var(--blue);
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.category {
+  padding: 10px 17px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.category.active {
+  background: var(--ink);
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 18px;
+}
+
+.product-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px #17172b12;
+}
+
+.product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  background: #eee;
+}
+
+.product-info {
+  padding: 16px;
+}
+
+.product-info small {
+  color: var(--blue);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  font: 700 21px 'Baloo 2';
+  margin: 8px 0;
+}
+
+.product-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 900;
+}
+
+.add-btn {
+  background: var(--yellow);
+  color: var(--ink);
+  border: none;
+  border-radius: 25px;
+  padding: 9px 14px;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+/* BOOKING */
+
+.booking-section {
+  background: #f7d8e7;
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.booking-intro h2 {
+  font: 800 clamp(42px,5vw,65px)/1.02 'Baloo 2';
+  margin: 18px 0;
+}
+
+.booking-intro h2 em {
+  color: var(--pink);
+  font-style: normal;
+}
+
+.booking-intro p {
+  color: #555;
+  line-height: 1.8;
+  max-width: 390px;
+}
+
+.booking-decoration {
+  font-size: 45px;
+  color: var(--blue);
+  margin-top: 35px;
+}
+
+.booking-form {
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 40px #17172b12;
+}
+
+.booking-form h3 {
+  font: 800 28px 'Baloo 2';
+  margin-bottom: 20px;
+}
+
+.booking-form label {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea {
+  display: block;
+  width: 100%;
+  margin-top: 8px;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fffdf9;
+  outline: none;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus {
+  border-color: var(--blue);
+}
+
+.submit-btn {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-note {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+/* ACCOUNT */
+
+.account-section {
+  text-align: center;
+}
+
+.account-placeholder {
+  background: white;
+  padding: 45px 20px;
+  border-radius: 22px;
+  border: 1px solid var(--line);
+}
+
+.account-icon {
+  font-size: 48px;
+  color: var(--pink);
+}
+
+.account-placeholder h3 {
+  font: 800 26px 'Baloo 2';
+  margin: 15px;
+}
+
+.account-placeholder p {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+/* CART */
+
+.cart-panel {
+  display: none;
+  position: fixed;
+  z-index: 200;
+  right: 0;
+  top: 0;
+  width: min(430px,100%);
+  height: 100dvh;
+  background: white;
+  padding: 25px;
+  box-shadow: -15px 0 50px #17172b25;
+  overflow-y: auto;
+}
+
+.cart-panel.open {
+  display: block;
+  animation: slideCart .3s ease;
+}
+
+@keyframes slideCart {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.cart-header h2 {
+  font: 800 30px 'Baloo 2';
+}
+
+.close-cart {
+  border: 0;
+  background: var(--cream);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.cart-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  gap: 10px;
+}
+
+.cart-row button {
+  padding: 5px 9px;
+  border: 1px solid var(--line);
+  background: white;
+  border-radius: 7px;
+}
+
+.cart-total {
+  padding: 20px 0;
+  font-size: 19px;
+  font-weight: 900;
+}
+
+/* FOOTER */
+
+.footer {
+  background: var(--ink);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+
+.footer h2 {
+  font: 800 42px 'Baloo 2';
+}
+
+.footer h2 span {
+  color: var(--pink);
+}
+
+.footer p {
+  color: #ccc;
+  margin: 8px;
+}
+
+.footer a {
+  display: inline-block;
+  color: var(--yellow);
+  margin: 18px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.footer small {
+  display: block;
+  color: #999;
+  margin-top: 15px;
+}
+
+/* TOAST */
+
+.toast {
+  position: fixed;
+  z-index: 300;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%,20px);
+  background: var(--ink);
+  color: white;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: .3s;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%,0);
+}
+
+/* TABLET */
+
+@media(max-width:900px) {
+  .header {
+    padding: 0 5%;
+  }
+
+  .header nav {
+    gap: 13px;
+  }
+
+  .hero {
+    padding: 60px 6%;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2,1fr);
+  }
+
+  .booking-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:650px) {
+  .header {
+    height: 68px;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .header nav {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 22px;
+    background: white;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 15px 25px #17172b15;
+  }
+
+  .header nav.open {
+    display: flex;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 50px 7% 30px;
+  }
+
+  .hero h1 {
+    font-size: 59px;
+  }
+
+  .hero-visual {
+    height: 350px;
+  }
+
+  .hero-shape {
+    width: 290px;
+    height: 290px;
+  }
+
+  .hero-image {
+    width: 245px;
+    height: 310px;
+  }
+
+  .section {
+    padding: 60px 6%;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+
+  .product-info {
+    padding: 12px;
+  }
+
+  .product-info h3 {
+    font-size: 17px;
+  }
+
+  .store-tools input {
+    width: 100%;
+  }
+
+  .booking-form {
+    padding: 20px;
+  }
+}
+
+@media(max-width:380px) {
+  .hero h1 {
+    font-size: 49px;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ACCESSIBILITY */
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+}
