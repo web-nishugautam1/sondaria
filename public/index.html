@@ -1,0 +1,217 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#174ee8">
+  <title>SONDARIA | Moments Made Magical</title>
+  <meta name="description" content="Beautiful celebrations, thoughtful surprises and party essentials by SONDARIA.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <a class="logo" href="#home">
+    <span class="logo-icon">S</span>
+    <span>SONDARIA<small>MOMENTS MADE MAGICAL</small></span>
+  </a>
+
+  <button class="menu-btn" id="menuBtn">☰</button>
+
+  <nav id="navigation">
+    <a href="#home">Home</a>
+    <a href="#celebrations">Celebrations</a>
+    <a href="#store">Party Store</a>
+    <a href="#booking">Book Now</a>
+    <a href="#account">Account</a>
+    <button class="cart-button" onclick="openCart()">
+      Bag <span id="cartCount">0</span>
+    </button>
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">✦ MAKE EVERY MOMENT SPECIAL</span>
+    <h1>Big feelings.<br><em>Beautiful</em><br>celebrations.</h1>
+    <p>
+      From dreamy birthday setups to unforgettable romantic surprises,
+      we make your special moments magical.
+    </p>
+    <div class="hero-buttons">
+      <a href="#celebrations" class="btn btn-dark">Plan a Celebration ↗</a>
+      <a href="#store" class="btn btn-white">Explore Store</a>
+    </div>
+    <div class="hero-caption">✦ Your moment. Our magic.</div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-shape"></div>
+    <img
+      class="hero-image"
+      src="https://images.unsplash.com/photo-1530103862676-de8c9debuf?auto=format&fit=crop&w=1000&q=85"
+      alt="Beautiful birthday party decoration">
+    <div class="floating-label label-one">✦ PARTY TIME</div>
+    <div class="floating-label label-two">Make it memorable ♡</div>
+    <span class="star star-one">✳</span>
+    <span class="star star-two">✦</span>
+  </div>
+</section>
+
+<div class="ticker">
+  CELEBRATE MORE ✦ LOVE LOUDER ✦ MAKE MEMORIES ✦ CELEBRATE MORE ✦
+</div>
+
+<section class="section" id="celebrations">
+  <div class="section-heading">
+    <span class="eyebrow">WHAT WE DO</span>
+    <h2>Good times, <em>beautifully</em> planned.</h2>
+    <p>Tell us your idea. We'll help make it happen.</p>
+  </div>
+
+  <div class="service-grid">
+    <article class="service-card pink">
+      <div class="service-icon">🎂</div>
+      <small>01 / BIRTHDAYS</small>
+      <h3>Another year.<br>More magic.</h3>
+      <button onclick="selectService('Birthday')">Plan Birthday ↗</button>
+    </article>
+
+    <article class="service-card yellow">
+      <div class="service-icon">💛</div>
+      <small>02 / ANNIVERSARIES</small>
+      <h3>Love deserves<br>a big moment.</h3>
+      <button onclick="selectService('Anniversary')">Plan Anniversary ↗</button>
+    </article>
+
+    <article class="service-card blue">
+      <div class="service-icon">🌹</div>
+      <small>03 / SURPRISES</small>
+      <h3>Make them say<br>“Oh, wow!”</h3>
+      <button onclick="selectService('Romantic Surprise')">Plan Surprise ↗</button>
+    </article>
+  </div>
+</section>
+
+<section class="section store-section" id="store">
+  <div class="section-heading">
+    <span class="eyebrow">THE PARTY STORE</span>
+    <h2>Little things. <em>Big smiles.</em></h2>
+    <p>Party essentials for your happiest moments.</p>
+  </div>
+
+  <div class="store-tools">
+    <input id="searchBox" type="search" placeholder="Search party products...">
+    <div class="categories">
+      <button class="category active" data-category="All">All</button>
+      <button class="category" data-category="Decor">Decor</button>
+      <button class="category" data-category="Candles">Candles</button>
+      <button class="category" data-category="Gifts">Gifts</button>
+      <button class="category" data-category="Party">Party</button>
+    </div>
+  </div>
+
+  <div class="product-grid" id="productGrid"></div>
+</section>
+
+<section class="section booking-section" id="booking">
+  <div class="booking-intro">
+    <span class="eyebrow">LET'S CREATE A MEMORY</span>
+    <h2>Your celebration<br>starts <em>right here.</em></h2>
+    <p>Share your event details. Our team will contact you to confirm availability and pricing.</p>
+    <div class="booking-decoration">✦ ♡ ✦</div>
+  </div>
+
+  <form id="bookingForm" class="booking-form">
+    <h3>Plan your celebration</h3>
+
+    <label>Occasion
+      <select name="occasion" id="occasion">
+        <option>Birthday</option>
+        <option>Anniversary</option>
+        <option>Romantic Surprise</option>
+        <option>Private Party</option>
+      </select>
+    </label>
+
+    <label>Event date
+      <input type="date" name="date" required>
+    </label>
+
+    <label>City / Locality
+      <input name="locality" placeholder="Enter your area" required>
+    </label>
+
+    <label>Approximate budget
+      <select name="budget">
+        <option>Under ₹3,000</option>
+        <option>₹3,000–₹7,000</option>
+        <option>₹7,000–₹15,000</option>
+        <option>₹15,000+</option>
+      </select>
+    </label>
+
+    <label>Tell us your idea
+      <textarea name="details" rows="3" placeholder="Theme, venue, special requests..."></textarea>
+    </label>
+
+    <button class="btn btn-dark submit-btn" type="submit">
+      Send Booking Enquiry ↗
+    </button>
+
+    <small class="form-note">
+      Booking is not confirmed until our team confirms availability.
+    </small>
+  </form>
+</section>
+
+<section class="section account-section" id="account">
+  <div class="section-heading">
+    <span class="eyebrow">YOUR SONDARIA ACCOUNT</span>
+    <h2>Your moments, <em>in one place.</em></h2>
+    <p>Customer login and saved profile will be connected with Firebase in the next step.</p>
+  </div>
+  <div class="account-placeholder">
+    <div class="account-icon">♡</div>
+    <h3>Your personal celebration space</h3>
+    <p>Login, saved details and order history will appear here.</p>
+    <button class="btn btn-dark" onclick="showMessage('Customer login will be connected in the Firebase setup.')">
+      Coming in next setup
+    </button>
+  </div>
+</section>
+
+<section class="cart-panel" id="cartPanel">
+  <div class="cart-header">
+    <h2>Your Bag</h2>
+    <button onclick="closeCart()" class="close-cart">✕</button>
+  </div>
+  <div id="cartItems"></div>
+  <div class="cart-total" id="cartTotal">Total: ₹0</div>
+  <button class="btn btn-dark submit-btn" onclick="checkoutWhatsApp()">
+    Continue on WhatsApp ↗
+  </button>
+  <p class="form-note">This is a temporary enquiry checkout. Online payment will be added after backend setup.</p>
+</section>
+
+</main>
+
+<footer class="footer">
+  <h2>SONDARIA<span>✦</span></h2>
+  <p>Moments Made Magical.</p>
+  <a href="https://wa.me/916395115988" target="_blank" rel="noopener">
+    WhatsApp: +91 63951 15988 ↗
+  </a>
+  <small>© 2026 SONDARIA. All rights reserved.</small>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="app.js"></script>
+</body>
+</html>
